@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootDetails">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".RecipeDetailsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/imageDetails"
+            android:scaleType="fitXY"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_file_upload"
+            android:onClick="btnOpenUpdater"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnFavDetails"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+            android:layout_below="@id/imageDetails"
+            android:layout_marginBottom="-40dp"
+            android:layout_marginRight="30dp"
+            app:maxImageSize="56dp"
+            android:backgroundTint="@color/colorWhite"
+            app:backgroundTint="@color/white"
+            android:src="@drawable/ic_fav_false"
+            android:scaleType="center"
+            android:onClick="btnFvrtUpdater"
+            app:fabCustomSize="80dp"
+            app:rippleColor="@color/sliding_tab_text_color_active"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrolbarUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20sp">
+            <ImageView
+                android:id="@+id/imageForUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/noimage"/>
+            <EditText
+                android:id="@+id/txtRecipeTitleForUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"/>
+            <EditText
+                android:id="@+id/txtIngregientQntyUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingredient and Quantity"
+                android:inputType="text|textMultiLine"/>
+            <EditText
+                android:id="@+id/txtStepsforUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cooking Process"
+                android:inputType="text|textMultiLine"/>
+            <EditText
+                android:id="@+id/txtSpInsforUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sprcial Instruction (Optional)"
+                android:inputType="text|textMultiLine"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="20sp"
+                android:text="Select Category "
+                android:textSize="15sp"/>
+            <Spinner
+                android:id="@+id/spnrCategoryUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar"
+                android:layout_marginBottom="15dp"></Spinner>
+            <Button
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Image"
+                android:textSize="22sp"
+                android:onClick="btnselectImageUpdate"/>
+            <Button
+                android:id="@+id/btnSubmitUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Recipe"
+                android:textSize="22sp"
+                android:onClick="btnUpdateRecipe"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textSize="22sp"
+                android:onClick="btnCancelRecipe"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/txtTitleDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Title"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/txtCategoryDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Category"
+        android:textSize="20sp"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Ingredients with Quantity"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtIngredientDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Ingredients with Quantity"
+        android:textSize="14sp"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Cooking Process"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/OliveDrab"/>
+    <TextView
+        android:id="@+id/txtCookingStepsDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Title"
+        android:textColor="@color/DarkBlue"
+        android:textSize="14sp"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Other Instructions"
+        android:textColor="@color/background_dark"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/txtSpecialInstructionDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10sp"
+        android:text="Title"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"/>
+
+</LinearLayout>
+</ScrollView>
